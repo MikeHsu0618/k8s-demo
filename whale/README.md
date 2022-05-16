@@ -37,7 +37,16 @@ cd ./whale
 kubectl apply -f ./
 ```
 
-4. 分別拜訪路徑
+4. 設定 localhost dns
+```
+vim /etc/hosts
+
+＃ /etc/hosts 加入指定路徑
+127.0.0.1 purple.demo.com
+127.0.0.1 blue.demo.com
+```
+
+5. 分別拜訪路徑
 
 ```
 curl purple.demo.com
