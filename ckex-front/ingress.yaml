@@ -5,23 +5,21 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: purple.demo.com
-      http:
+    - http:
         paths:
           - backend:
               service:
-                name: purple-service
+                name: ckex-front-pc-service
                 port:
                   number: 80
-            path: /
+            path: /pc
             pathType: Prefix
 
-    - host: blue.demo.com
-      http:
+    - http:
         paths:
           - backend:
               service:
-                name: blue-service
+                name: ckex-front-service
                 port:
                   number: 80
             path: /

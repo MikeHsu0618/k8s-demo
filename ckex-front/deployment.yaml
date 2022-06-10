@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ckex-front
+  labels:
+      app: ckex-front
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ckex-front
+  template:
+    metadata:
+      labels:
+        app: ckex-front
+    spec:
+      containers:
+      - name: ckex-front
+        image: "asia.gcr.io/ckex-319603/front"
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ckex-front-pc
+  labels:
+    app: ckex-front-pc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ckex-front-pc
+  template:
+    metadata:
+      labels:
+        app: ckex-front-pc
+    spec:
+      containers:
+        - name: ckex-front-pc
+          image: "asia.gcr.io/ckex-319603/front-pc"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
